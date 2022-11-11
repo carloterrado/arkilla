@@ -7,9 +7,11 @@
   
     function submitHandler()
     {
-        $user = {email};
-        goto('/');
-     
+        if(email != '')
+        {
+            $user = {email};
+            goto('/');
+        }   
     }
 </script>
 
