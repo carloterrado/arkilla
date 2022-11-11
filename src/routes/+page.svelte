@@ -1,5 +1,5 @@
-<div class="flex items-center justify-center min-h-screen bg-slate-400">
-    <h1 class="text-9xl font-bold">
+<div class="flex items-center justify-center min-h-screen">
+    <h1 class="text-4xl text-center font-bold lg:text-7xl ">
         Arkilla Home Page 
     </h1>
 </div>
