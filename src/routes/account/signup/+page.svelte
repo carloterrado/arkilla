@@ -16,7 +16,7 @@
 </script>
 
 
-<div class="min-h-full grid text-white text-xs sm:text-base" >
+<div class="min-h-full grid text-white text-xs sm:text-base my-auto" >
     <div class="m-auto p-4 rounded-md bg-slate-900/70 w-full max-w-[400px]">
         <form on:submit|preventDefault={submitHandler} class="flex flex-col gap-4">
             <h2 class="text-center font-semibold">Sign up</h2>
