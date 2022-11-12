@@ -34,7 +34,7 @@
         {/if}
     </header>
 
-    <main class="px-5 min-h-[calc(100vmax-10rem)] sm:min-h-[calc(100vmin-10rem)]">
+    <main class="px-5 h-[calc(100vmax-10rem)] sm:h-[calc(100vmin-10rem)] min-h-[calc(100vmax-10rem)]  sm:min-h-[calc(100vmin-10rem)]">
     <slot />
     </main>
 
