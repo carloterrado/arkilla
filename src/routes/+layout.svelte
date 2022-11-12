@@ -15,16 +15,16 @@
             <button class="sm:hidden" on:click="{() => showNavBar = true}">Nav</button>
             <span class="uppercase hidden sm:block"><a href="/">logo</a></span>
         </div> 
-        <nav class="{showNavBar === true ? 'translate-x-0' : 'hidden -translate-x-full'} mx-auto fixed left-0 top-0 sm:translate-x-0 transition duration-1000 bg-slate-600 w-full h-screen p-6 sm:p-0 sm:h-auto sm:relative sm:grid sm:place-items-center sm:bg-transparent">
+        <nav class="{showNavBar === true ? 'translate-x-0' : '-translate-x-full'} mx-auto fixed left-0 top-0 sm:translate-x-0 transition duration-1000 bg-slate-600 w-full h-screen p-6 sm:p-0 sm:h-auto sm:relative sm:grid sm:place-items-center sm:bg-transparent">
             <div class="mb-5 flex justify-between sm:hidden">
                <span><a href="/" on:click="{() => showNavBar = false}">Logo</a></span>
                 <button on:click="{() => showNavBar = false}">Close</button>
             </div>
             <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8">
-                <li><a href="/" class="uppercase" on:click="{() => showNavBar = false}">Home</a></li>
-                <li><a href="/product" class="uppercase" on:click="{() => showNavBar = false}">Product</a></li>
-                <li><a href="/about" class="uppercase" on:click="{() => showNavBar = false}">About</a></li>
-                <li><a href="/services" class="uppercase" on:click="{() => showNavBar = false}">Services</a></li>
+                <li><a href="/" class="uppercase relative before:absolute before:content-[''] before:left-0 before:h-[2px] before:w-full before:-bottom-[2px] before:bg-black before:scale-x-0 before:origin-right hover:before:scale-x-100 hover:before:origin-left before:transition before:duration-500" on:click="{() => showNavBar = false}">Home</a></li>
+                <li><a href="/product" class="uppercase relative before:absolute before:content-[''] before:left-0 before:h-[2px] before:w-full before:-bottom-[2px] before:bg-black before:scale-x-0 before:origin-right hover:before:scale-x-100 hover:before:origin-left before:transition before:duration-500" on:click="{() => showNavBar = false}">Product</a></li>
+                <li><a href="/about" class="uppercase relative before:absolute before:content-[''] before:left-0 before:h-[2px] before:w-full before:-bottom-[2px] before:bg-black before:scale-x-0 before:origin-right hover:before:scale-x-100 hover:before:origin-left before:transition before:duration-500" on:click="{() => showNavBar = false}">About</a></li>
+                <li><a href="/services" class="uppercase relative before:absolute before:content-[''] before:left-0 before:h-[2px] before:w-full before:-bottom-[2px] before:bg-black before:scale-x-0 before:origin-right hover:before:scale-x-100 hover:before:origin-left before:transition before:duration-500" on:click="{() => showNavBar = false}">Services</a></li>
             </ul>
         </nav>
         {#if $user != null}
