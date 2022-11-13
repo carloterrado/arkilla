@@ -14,21 +14,17 @@
         <button on:click="{() => showNavBar = true}"  class="sm:hidden w-[25px] h-[25px]">
             <span class="block relative h-[2px] bg-white my-auto before:content-[''] before:h-[2px] before:w-full before:bg-white before:absolute before:left-0 before:top-[8px] after:content-[''] after:h-[2px] after:w-full after:bg-white after:absolute after:left-0 after:bottom-[8px]"></span>
         </button>
-        <div class="hidden sm:block">
-            <a href="/" class="relative w-[50px]">
-                <span class="absolute bottom-[5px] left-[10px] w-[25px] h-[5px] bg-white rounded-t-[4px] before:content-[''] before:absolute before:top-[2px] before:left-[13%] before:bg-black before:w-3/4 before:h-[6px] before:rounded-lg z-10"></span>
-                <span class="absolute -bottom-[10px] left-0 w-[50px] h-[15px] bg-white rounded-t-[8px] rounded-b-[4px] before:content-[''] before:absolute before:top-[50%] before:left-[5px] before:bg-black before:h-[15px] before:w-[15px] before:rounded-full after:content-[''] after:absolute after:top-[50%] after:right-[5px] after:bg-black after:h-[15px] after:w-[15px] after:rounded-full"></span>
-            </a>
-        </div>
+        <a href="/" class="hidden sm:block relative w-[50px]">
+            <span class="absolute bottom-[5px] left-[10px] w-[25px] h-[5px] bg-white rounded-t-[4px] before:content-[''] before:absolute before:top-[2px] before:left-[13%] before:bg-black before:w-3/4 before:h-[6px] before:rounded-lg z-10"></span>
+            <span class="absolute -bottom-[10px] left-0 w-[50px] h-[15px] bg-white rounded-t-[8px] rounded-b-[4px] before:content-[''] before:absolute before:top-[50%] before:left-[5px] before:bg-black before:h-[15px] before:w-[15px] before:rounded-full after:content-[''] after:absolute after:top-[50%] after:right-[5px] after:bg-black after:h-[15px] after:w-[15px] after:rounded-full"></span>
+        </a>
     </div> 
     <nav class="{showNavBar === true ? 'translate-x-0' : '-translate-x-full'} mx-auto fixed left-0 top-0 sm:translate-x-0 transition duration-1000 bg-slate-600 w-full h-screen p-6 sm:p-0 sm:h-auto sm:relative sm:grid sm:place-items-center sm:bg-transparent">
         <div class="mb-5 flex justify-between sm:hidden">
-            <div class="relative top-3">
-                <a href="/" on:click="{() => showNavBar = false}" class="relative w-[50px]">
-                    <span class="absolute bottom-[5px] left-[10px] w-[25px] h-[5px] bg-white rounded-t-[4px] before:content-[''] before:absolute before:top-[2px] before:left-[13%] before:bg-black before:w-3/4 before:h-[4px] before:rounded-lg z-10"></span>
-                    <span class="absolute -bottom-[10px] left-0 w-[50px] h-[15px] bg-white rounded-t-[8px] rounded-b-[4px] before:content-[''] before:absolute before:top-[50%] before:left-[5px] before:bg-black before:h-[15px] before:w-[15px] before:rounded-full after:content-[''] after:absolute after:top-[50%] after:right-[5px] after:bg-black after:h-[15px] after:w-[15px] after:rounded-full"></span>
-                </a>
-            </div>
+            <a href="/" on:click="{() => showNavBar = false}" class="relative bottom-3 w-[50px]">
+                <span class="absolute bottom-[5px] left-[10px] w-[25px] h-[5px] bg-white rounded-t-[4px] before:content-[''] before:absolute before:top-[2px] before:left-[13%] before:bg-black before:w-3/4 before:h-[4px] before:rounded-lg z-10"></span>
+                <span class="absolute -bottom-[10px] left-0 w-[50px] h-[15px] bg-white rounded-t-[8px] rounded-b-[4px] before:content-[''] before:absolute before:top-[50%] before:left-[5px] before:bg-black before:h-[15px] before:w-[15px] before:rounded-full after:content-[''] after:absolute after:top-[50%] after:right-[5px] after:bg-black after:h-[15px] after:w-[15px] after:rounded-full"></span>
+            </a>
             <button on:click="{() => showNavBar = false}" class="w-[25px] h-[25px]">
                 <span class="block relative h-[2px] bg-white my-auto rotate-45 before:content-[''] before:h-[2px] before:w-full before:bg-white before:absolute before:left-0 before:top-1/2 before:-translate-y-[50%] before:rotate-90"></span>
             </button>
