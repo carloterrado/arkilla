@@ -1,10 +1,20 @@
 <script>
     import "../app.css";
-    import {user} from '../lib/stores.js'
+    import {user} from '$lib/stores';
+    import {signOut} from 'firebase/auth';
+    import {auth} from '$lib/firebase';
+    import {goto} from '$app/navigation';
+   
+ 
     let showNavBar = false;
-    function logout()
+    async function logout()
     {
-        $user = null;
+       await signOut(auth).then(() => {
+            $user = null;
+       }).catch((error) => {
+            goto('/'); 
+       })
+      
     }
 </script>
 

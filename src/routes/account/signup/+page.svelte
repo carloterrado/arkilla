@@ -1,23 +1,49 @@
 <script>
-    import {user} from '$lib/stores.js';
+    
     import {goto} from '$app/navigation';
+    import {createUserWithEmailAndPassword} from 'firebase/auth';
+    import {auth} from '$lib/firebase.js';
+    import {user,error_msg} from '$lib/stores';
+    import {onAuthStateChanged} from 'firebase/auth';
+
+    onAuthStateChanged(auth , (fb_user) => {
+        if (fb_user) {   
+            $user = fb_user;
+        } else {
+            $user = null;
+        }
+    });
+
 
     let email = '';
     let password = '';
   
-    function submitHandler()
+  async function submitHandler()
     {
-        if(email != '')
-        {
-            $user = {email};
-            goto('/');
-        }   
+      await createUserWithEmailAndPassword(auth, email, password).then((userCredential)=> {
+        $user = userCredential.user;
+        goto('/');  
+      }).catch((error)=>{
+        $error_msg =  error.message;
+        goto('/account/signup');
+      })
+
+        setTimeout(() => {
+            if($error_msg != null)
+            {
+                $error_msg = null;
+            } 
+        },2000)
     }
+   
 </script>
 
 
 <div class="min-h-full grid text-white text-xs sm:text-base my-auto" >
     <div class="m-auto p-4 rounded-md bg-slate-900/70 w-full max-w-[400px]">
+        {#if $error_msg != null}
+            <p class="py-2 px-3 bg-red-400 text-center">{$error_msg}</p>
+        {/if}
         <form on:submit|preventDefault={submitHandler} class="flex flex-col gap-4">
             <h2 class="text-center font-semibold">Sign up</h2>
             <input class="rounded-lg px-3 py-2 text-black" type="email" name="email" bind:value={email} placeholder="Enter your email">
